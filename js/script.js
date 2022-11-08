@@ -121,15 +121,16 @@ function invert(){
 
 	scrolling = setInterval(function (){
 		listEleImg[activeIndex].classList.remove('active');
-		imgStyle[activeIndex].classList.remove('light')
-		
-		if (activeIndex === listEleImg.length - 1) {
-			activeIndex = 0;
-		}	else {
-			activeIndex--;
-		}
-		listEleImg[activeIndex].classList.add('active');
-		imgStyle[activeIndex].classList.add('light')
+	imgStyle[activeIndex].classList.remove('light')
+
+	if (activeIndex === 0) {
+		activeIndex = listEleImg.length - 1;
+	}	else {
+		activeIndex--;
+	}
+
+	listEleImg[activeIndex].classList.add('active');
+	imgStyle[activeIndex].classList.add('light')
 	}, 3000)
 }
 
